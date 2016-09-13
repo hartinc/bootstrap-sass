@@ -62,7 +62,12 @@
 
     var $parent  = getParent($this)
     var isActive = $parent.hasClass('open')
-
+    
+    if (!$(e.target).hasClass("mobileExpand") && $(this).attr("href")) {
+      document.location($(this).attr("href"));
+      return false;
+    }
+    
     clearMenus()
 
     if (!isActive) {
